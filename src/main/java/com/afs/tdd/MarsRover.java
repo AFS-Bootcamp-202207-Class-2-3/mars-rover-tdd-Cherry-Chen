@@ -30,12 +30,6 @@ public class MarsRover {
         put(SOUTH, new Integer[]{0, -1});
     }};
 
-    public MarsRover() {
-        this.XCoordinate = 0;
-        this.YCoordinate = 0;
-        this.directionCode = directions.indexOf("N");
-    }
-
     public MarsRover(int x, int y, String direction) {
         this.XCoordinate = x;
         this.YCoordinate = y;
@@ -47,7 +41,7 @@ public class MarsRover {
 
         commandList.forEach(command -> {
             if (MOVE_COMMAND.equals(command)) {
-                changeCoordinate();
+                move();
             }else if (TURN_LEFT_COMMAND.equals(command)) {
                 turnLeft();
             }else if (TURN_RIGHT_COMMAND.equals(command)) {
@@ -61,7 +55,7 @@ public class MarsRover {
         return Arrays.asList(commands.split(" "));
     }
 
-    private void changeCoordinate() {
+    private void move() {
         setXCoordinate(getXCoordinate() + move.get(getDirection())[0]);
         setYCoordinate(getYCoordinate() + move.get(getDirection())[1]);
     }
