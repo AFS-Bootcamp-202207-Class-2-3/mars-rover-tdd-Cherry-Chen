@@ -42,7 +42,12 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if(MOVE_COMMAND.equals(command)){
-            this.YCoordinate++;
+            if(getDirection() == "S"){
+                this.YCoordinate--;
+            }else if(getDirection() == "N"){
+                this.YCoordinate++;
+            }
+
         }
 
         if(TURN_LEFT_COMMAND.equals(command)){

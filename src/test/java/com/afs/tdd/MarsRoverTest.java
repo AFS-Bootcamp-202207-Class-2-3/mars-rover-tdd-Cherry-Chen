@@ -54,8 +54,8 @@ class MarsRoverTest {
     @Test
     void should_be_0_minus_1_S_when_move_given_from_0_0_S() {
         //given
-        MarsRover marsRover = new MarsRover(0,0,"N");
-        String command = "R";
+        MarsRover marsRover = new MarsRover(0,0,"S");
+        String command = "M";
 
         //when
         marsRover.executeCommand(command);
