@@ -21,16 +21,16 @@ public class MarsRover {
     private static final String WEST = "W";
 
     private List<String> directions = new ArrayList() {{
-        add("W");
-        add("N");
-        add("E");
-        add("S");
+        add(WEST);
+        add(NORTH);
+        add(EAST);
+        add(SOUTH);
     }};
     private Map<String, Integer[]> move = new HashMap() {{
-        put("W", new int[]{-1, 0});
-        put("N", new int[]{0, 1});
-        put("E", new int[]{1, 0});
-        put("S", new int[]{0, -1});
+        put(WEST, new Integer[]{-1, 0});
+        put(NORTH, new Integer[]{0, 1});
+        put(EAST, new Integer[]{1, 0});
+        put(SOUTH, new Integer[]{0, -1});
     }};
 
     public MarsRover() {
@@ -47,16 +47,7 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if (MOVE_COMMAND.equals(command)) {
-            if (getDirection() == SOUTH) {
-                this.YCoordinate--;
-            } else if (getDirection() == NORTH) {
-                this.YCoordinate++;
-            }else if(getDirection() == EAST){
-                this.XCoordinate++;
-            }else if(getDirection() == WEST){
-                this.XCoordinate--;
-            }
-
+            changeCoordinate();
         }
 
         if (TURN_LEFT_COMMAND.equals(command)) {
@@ -68,10 +59,15 @@ public class MarsRover {
         }
     }
 
+    private void changeCoordinate() {
+        setXCoordinate(getXCoordinate() + move.get(getDirection())[0]);
+        setYCoordinate(getYCoordinate() + move.get(getDirection())[1]);
+    }
+
     private void turnLeft() {
         this.directionCode--;
-        if(this.directionCode < 0){
-            this.directionCode = this.directions.size()-1;
+        if (this.directionCode < 0) {
+            this.directionCode = this.directions.size() - 1;
         }
     }
 
@@ -84,7 +80,7 @@ public class MarsRover {
 
 
     public int getXCoordinate() {
-        return XCoordinate;
+        return this.XCoordinate;
     }
 
     public void setXCoordinate(int xCoordinate) {
@@ -92,7 +88,7 @@ public class MarsRover {
     }
 
     public int getYCoordinate() {
-        return YCoordinate;
+        return this.YCoordinate;
     }
 
     public void setYCoordinate(int YCoordinate) {
