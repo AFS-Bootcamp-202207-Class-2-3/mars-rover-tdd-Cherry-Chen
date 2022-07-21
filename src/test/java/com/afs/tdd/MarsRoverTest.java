@@ -185,4 +185,26 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getYCoordinate());
         assertEquals("N", marsRover.getDirection());
     }
+
+
+    @Test
+    void should_be_like_the_expected_when_multiple_command_given_from_0_0_N(){
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"N");
+        String command = "M R M L L M";
+        //move -> 0 1 N
+        //turnRight -> 0 1 E
+        //move -> 1 1 E
+        //turnLeft -> 1 1 N
+        //turnLeft -> 1 1 W
+        //move -> 0 1 W
+
+        //when
+        marsRover.executeCommand(command);
+
+        //then
+        assertEquals(0, marsRover.getXCoordinate());
+        assertEquals(1, marsRover.getYCoordinate());
+        assertEquals("W", marsRover.getDirection());
+    }
 }
