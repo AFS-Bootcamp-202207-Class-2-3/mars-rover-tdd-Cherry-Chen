@@ -1,9 +1,6 @@
 package com.afs.tdd;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MarsRover {
 
@@ -45,18 +42,23 @@ public class MarsRover {
         this.directionCode = directions.indexOf(direction);
     }
 
-    public void executeCommand(String command) {
-        if (MOVE_COMMAND.equals(command)) {
-            changeCoordinate();
-        }
+    public void executeCommand(String commands) {
+        List<String> commandList = divideCommands(commands);
 
-        if (TURN_LEFT_COMMAND.equals(command)) {
-            turnLeft();
-        }
+        commandList.forEach(command -> {
+            if (MOVE_COMMAND.equals(command)) {
+                changeCoordinate();
+            }else if (TURN_LEFT_COMMAND.equals(command)) {
+                turnLeft();
+            }else if (TURN_RIGHT_COMMAND.equals(command)) {
+                turnRight();
+            }
+        });
 
-        if (TURN_RIGHT_COMMAND.equals(command)) {
-            turnRight();
-        }
+    }
+
+    private List<String> divideCommands(String commands) {
+        return Arrays.asList(commands.split(" "));
     }
 
     private void changeCoordinate() {
