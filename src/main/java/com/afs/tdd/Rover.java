@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Rover {
 
-    private int x;
-    private int y;
+    private int XCoordinate;
+    private int YCoordinate;
     private int directionCode;
 
     private List<String> directions = new ArrayList() {{
@@ -25,16 +25,46 @@ public class Rover {
     }};
 
     public Rover() {
-        this.x = 0;
-        this.y = 0;
+        this.XCoordinate = 0;
+        this.YCoordinate = 0;
         this.directionCode = directions.indexOf("N");
     }
 
     public Rover(int x, int y, String direction) {
-        this.x = x;
-        this.y = y;
+        this.XCoordinate = x;
+        this.YCoordinate = y;
         this.directionCode = directions.indexOf(direction);
     }
 
 
+
+    public void executeCommand(String command) {
+
+
+    }
+
+
+    public int getXCoordinate() {
+        return XCoordinate;
+    }
+
+    public void setXCoordinate(int xCoordinate) {
+        this.XCoordinate = xCoordinate;
+    }
+
+    public int getYCoordinate() {
+        return YCoordinate;
+    }
+
+    public void setYCoordinate(int YCoordinate) {
+        this.YCoordinate = YCoordinate;
+    }
+
+    public String getDirection(){
+        return directions.get(directionCode);
+    }
+
+    public void setDirection(){
+        directionCode = directions.indexOf(directionCode);
+    }
 }
