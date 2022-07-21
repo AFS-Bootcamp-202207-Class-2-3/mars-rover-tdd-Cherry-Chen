@@ -11,6 +11,8 @@ public class MarsRover {
     private int YCoordinate;
     private int directionCode;
 
+    public static final String MOVE_COMMAND = "M";
+
     private List<String> directions = new ArrayList() {{
         add("W");
         add("N");
@@ -36,11 +38,10 @@ public class MarsRover {
         this.directionCode = directions.indexOf(direction);
     }
 
-
-
     public void executeCommand(String command) {
-        this.XCoordinate = 0;
-        this.YCoordinate = 1;
+        if(MOVE_COMMAND.equals(command)){
+            this.YCoordinate++;
+        }
     }
 
 
