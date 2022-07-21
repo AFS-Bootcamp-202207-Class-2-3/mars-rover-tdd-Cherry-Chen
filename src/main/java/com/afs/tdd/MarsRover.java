@@ -44,24 +44,28 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if(MOVE_COMMAND.equals(command)){
-            if(getDirection() == SOUTH){
+        if (MOVE_COMMAND.equals(command)) {
+            if (getDirection() == SOUTH) {
                 this.YCoordinate--;
-            }else if(getDirection() == NORTH){
+            } else if (getDirection() == NORTH) {
                 this.YCoordinate++;
             }
 
         }
 
-        if(TURN_LEFT_COMMAND.equals(command)){
+        if (TURN_LEFT_COMMAND.equals(command)) {
             this.directionCode--;
         }
 
-        if(TURN_RIGHT_COMMAND.equals(command)){
-            this.directionCode++;
-            if(directionCode >= directions.size()){
-                directionCode = 0;
-            }
+        if (TURN_RIGHT_COMMAND.equals(command)) {
+            turnRight();
+        }
+    }
+
+    private void turnRight() {
+        this.directionCode++;
+        if (directionCode >= directions.size()) {
+            directionCode = 0;
         }
     }
 
@@ -82,11 +86,11 @@ public class MarsRover {
         this.YCoordinate = YCoordinate;
     }
 
-    public String getDirection(){
+    public String getDirection() {
         return directions.get(directionCode);
     }
 
-    public void setDirection(){
+    public void setDirection() {
         directionCode = directions.indexOf(directionCode);
     }
 }
