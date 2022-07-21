@@ -126,5 +126,18 @@ class MarsRoverTest {
         assertEquals("N", marsRover.getDirection());
     }
 
+    @Test
+    void should_be_0_0_S_when_turn_right_given_from_0_0_E() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"E");
+        String command = "R";
 
+        //when
+        marsRover.executeCommand(command);
+
+        //then
+        assertEquals(0, marsRover.getXCoordinate());
+        assertEquals(0, marsRover.getYCoordinate());
+        assertEquals("S", marsRover.getDirection());
+    }
 }
