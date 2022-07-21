@@ -60,14 +60,18 @@ public class MarsRover {
         }
 
         if (TURN_LEFT_COMMAND.equals(command)) {
-            this.directionCode--;
-            if(this.directionCode < 0){
-                this.directionCode = this.directions.size()-1;
-            }
+            turnLeft();
         }
 
         if (TURN_RIGHT_COMMAND.equals(command)) {
             turnRight();
+        }
+    }
+
+    private void turnLeft() {
+        this.directionCode--;
+        if(this.directionCode < 0){
+            this.directionCode = this.directions.size()-1;
         }
     }
 
