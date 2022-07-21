@@ -12,6 +12,7 @@ public class MarsRover {
     private int directionCode;
 
     public static final String MOVE_COMMAND = "M";
+    public static final String TURN_LEFT_COMMAND = "L";
 
     private List<String> directions = new ArrayList() {{
         add("W");
@@ -43,7 +44,7 @@ public class MarsRover {
             this.YCoordinate++;
         }
 
-        if("L".equals(command)){
+        if(TURN_LEFT_COMMAND.equals(command)){
             this.directionCode--;
         }
     }
