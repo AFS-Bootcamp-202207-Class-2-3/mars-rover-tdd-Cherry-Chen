@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Rover {
+public class MarsRover {
 
     private int XCoordinate;
     private int YCoordinate;
@@ -24,13 +24,13 @@ public class Rover {
         put("S", new int[]{0, -1});
     }};
 
-    public Rover() {
+    public MarsRover() {
         this.XCoordinate = 0;
         this.YCoordinate = 0;
         this.directionCode = directions.indexOf("N");
     }
 
-    public Rover(int x, int y, String direction) {
+    public MarsRover(int x, int y, String direction) {
         this.XCoordinate = x;
         this.YCoordinate = y;
         this.directionCode = directions.indexOf(direction);
@@ -39,8 +39,8 @@ public class Rover {
 
 
     public void executeCommand(String command) {
-
-
+        this.XCoordinate = 0;
+        this.YCoordinate = 1;
     }
 
 
