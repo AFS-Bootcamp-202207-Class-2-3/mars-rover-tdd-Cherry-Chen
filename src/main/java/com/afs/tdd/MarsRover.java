@@ -106,7 +106,6 @@ public class MarsRover {
     }
 
     public String report() {
-//        return String.format("%d %d %s",XCoordinate,YCoordinate,getDirection());
-        return null;
+        return String.format("%d %d %s",XCoordinate,YCoordinate,getDirection());
     }
 }
