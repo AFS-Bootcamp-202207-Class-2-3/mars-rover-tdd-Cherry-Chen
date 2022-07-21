@@ -104,4 +104,9 @@ public class MarsRover {
     public void setDirection() {
         directionCode = directions.indexOf(directionCode);
     }
+
+    public String report() {
+//        return String.format("%d %d %s",XCoordinate,YCoordinate,getDirection());
+        return null;
+    }
 }

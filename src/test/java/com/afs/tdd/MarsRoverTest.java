@@ -206,5 +206,7 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getXCoordinate());
         assertEquals(1, marsRover.getYCoordinate());
         assertEquals("W", marsRover.getDirection());
+
+        assertEquals("0 1 W", marsRover.report());
     }
 }
