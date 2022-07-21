@@ -17,6 +17,7 @@ public class MarsRover {
 
     private static final String SOUTH = "S";
     private static final String NORTH = "N";
+    private static final String EAST = "E";
 
     private List<String> directions = new ArrayList() {{
         add("W");
@@ -49,7 +50,7 @@ public class MarsRover {
                 this.YCoordinate--;
             } else if (getDirection() == NORTH) {
                 this.YCoordinate++;
-            }else if(getDirection() == "E"){
+            }else if(getDirection() == EAST){
                 this.XCoordinate++;
             }
 
