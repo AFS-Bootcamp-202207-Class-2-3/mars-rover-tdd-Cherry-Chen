@@ -49,6 +49,8 @@ public class MarsRover {
                 this.YCoordinate--;
             } else if (getDirection() == NORTH) {
                 this.YCoordinate++;
+            }else if(getDirection() == "E"){
+                this.XCoordinate++;
             }
 
         }
