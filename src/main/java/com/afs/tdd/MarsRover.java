@@ -59,6 +59,9 @@ public class MarsRover {
 
         if(TURN_RIGHT_COMMAND.equals(command)){
             this.directionCode++;
+            if(directionCode >= directions.size()){
+                directionCode = 0;
+            }
         }
     }
 
