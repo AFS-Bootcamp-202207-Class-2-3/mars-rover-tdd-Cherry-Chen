@@ -42,6 +42,10 @@ public class MarsRover {
         if(MOVE_COMMAND.equals(command)){
             this.YCoordinate++;
         }
+
+        if("L".equals(command)){
+            this.directionCode--;
+        }
     }
 
 
